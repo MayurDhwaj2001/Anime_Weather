@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container row" id="container">
+        <div class="weather col">
+            <div class="logo">
+                <h1>Anime Weather</h1>
+            </div>
+            <div class="temprature row">
+                <div class="celcius">
+                    <h1 class="num"><span id="temp">~~</span>°C</h1>
+                </div>
+                <div class="location">
+                    <h1><span id="city">~~</span>,<span id="country">~~</span></h1>
+                    <h5 id="time">12:10 - Fri 9-12-2001</h5>
+                </div>
+                <div class="pic">
+                    <img src="images/clear.png" class="img" id="img" alt="" srcset="">
+                    <h5 id="details">~~~~</h5>
+                </div>
+            </div>
+        </div>
+        <div class="info col">
+            <div class="row nav">
+                <input type="text" placeholder="Search" id="cityname">
+                <button class="search" id="citybtn"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="weatherinfo col">
+                <button class="btn" id="ranchi">Ranchi</button>
+                <button class="btn" id="kolkata">Kolkata</button>
+                <button class="btn" id="bangalore">Banglore</button>
+                <button class="btn" id="delhi">Delhi</button>
+                <button class="btn" id="jaipur">Jaipur</button>
+                <div class="line"></div>
+
+                <div class="row det">
+                    <div class="col">
+                        <h1>Humidity </h1>
+                        <h1>Wind </h1>
+                        <!-- <h1>Visibility </h1> -->
+
+                    </div>
+                    <div class="col right">
+                        <h1><span id="humidity">~~</span>%</h1>
+                        <h1><span id="windspeed">~~</span>mph</h1>
+                        <!-- <h1><span id="visibility">~~</span>km</h1> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
