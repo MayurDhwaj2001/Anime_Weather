@@ -8,6 +8,7 @@ const c2=document.getElementById("kolkata");
 const c3=document.getElementById("bangalore");
 const c4=document.getElementById("delhi");
 const c5=document.getElementById("jaipur");
+let trimmed;
 const weathercondn = document.querySelector(".img");
 let ampm;
 
@@ -113,7 +114,6 @@ async function checkweather (city){
 }
 
 searchbtn.addEventListener("click",()=>{
-    as=searchbox.value;
     if(as==""){
         document.getElementById("city").innerHTML="~~";
         document.getElementById("country").innerHTML="~~";
@@ -125,8 +125,9 @@ searchbtn.addEventListener("click",()=>{
         weathercondn.src=""
     }
     else{
-
-        checkweather(as);
+        as=searchbox.value;
+        trimmed=as.trimRight();
+        checkweather(trimmed);
     }
 });
 
