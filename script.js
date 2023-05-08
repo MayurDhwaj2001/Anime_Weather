@@ -132,6 +132,28 @@ searchbtn.addEventListener("click",()=>{
 });
 
 
+const inputElement = document.querySelector('input');
+
+inputElement.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    if(as==""){
+        document.getElementById("city").innerHTML="~~";
+        document.getElementById("country").innerHTML="~~";
+        document.getElementById("temp").innerHTML="~~";
+        document.getElementById("humidity").innerHTML="~~";
+        document.getElementById("windspeed").innerHTML="~~";
+        document.getElementById("details").innerHTML="~~~~~";
+        document.getElementById("visibility").innerHTML="~~";
+        weathercondn.src=""
+    }
+    else{
+        as=searchbox.value;
+        trimmed=as.trimRight();
+        checkweather(trimmed);
+    }
+  }
+});
+
 
 c1.addEventListener("click",()=>{
 checkweather("Ranchi");
