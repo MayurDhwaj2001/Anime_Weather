@@ -9,6 +9,7 @@ const c3=document.getElementById("bangalore");
 const c4=document.getElementById("delhi");
 const c5=document.getElementById("jaipur");
 const weathercondn = document.querySelector(".img");
+let ampm;
 
 var element = document.getElementById("container");
 function updateTime() {
@@ -19,7 +20,7 @@ function updateTime() {
     var day = now.getDate();
     var month = now.getMonth() + 1; // getMonth() returns 0-11, so add 1
     var year = now.getFullYear();
-    var ampm = hours >= 12 ? 'PM' : 'AM';
+    ampm = hours >= 12 ? 'PM' : 'AM';
     var timeString = hours + ":" + minutes + ":" + seconds + " " + day + "/" + month + "/" + year;
     document.getElementById("time").innerHTML = timeString;
   }
@@ -41,9 +42,9 @@ async function checkweather (city){
         if(data.weather[0].main=="Clear"){
             weathercondn.src="images/clear.png"
             if(ampm=='AM')
-            element.style.backgroundImage = "url('./images/wall/day/cloud.jpg')";
+            element.style.backgroundImage = "url('./images/wall/day/sunny.jpg')";
             else
-            element.style.backgroundImage = "url('./images/wall/night/cloud.jpg')";
+            element.style.backgroundImage = "url('./images/wall/night/sunny.jpg')";
             
         }
         else if(data.weather[0].main=="Clouds"){
@@ -96,9 +97,9 @@ async function checkweather (city){
             element.style.backgroundImage = "url('./images/wall/day/cloud.jpg')";
 
             if(ampm=='AM')
-            element.style.backgroundImage = "url('./images/wall/day/rain.jpg')";
+            element.style.backgroundImage = "url('./images/wall/day/cloud.jpg')";
             else
-            element.style.backgroundImage = "url('./images/wall/night/rain.jpg')";
+            element.style.backgroundImage = "url('./images/wall/night/cloud.jpg')";
         } 
 }
 
