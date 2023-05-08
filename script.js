@@ -20,7 +20,17 @@ function updateTime() {
     var day = now.getDate();
     var month = now.getMonth() + 1; // getMonth() returns 0-11, so add 1
     var year = now.getFullYear();
-    ampm = hours >= 12 ? 'PM' : 'AM';
+
+    
+    if (hours >= 6 && hours <= 18) {
+         ampm = "AM";
+      } else {
+         ampm = "PM";
+      }
+
+
+
+    // ampm = hours >= 12 ? 'PM' : 'AM';
     var timeString = hours + ":" + minutes + ":" + seconds + " " + day + "/" + month + "/" + year;
     document.getElementById("time").innerHTML = timeString;
   }
@@ -31,7 +41,6 @@ function updateTime() {
 async function checkweather (city){
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     var data = await response.json ();
-    
     document.getElementById("city").innerHTML=data.name;
     document.getElementById("country").innerHTML=data.sys.country;
     document.getElementById("temp").innerHTML=Math.round(data.main.temp);
